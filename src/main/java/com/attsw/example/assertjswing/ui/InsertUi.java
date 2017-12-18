@@ -15,6 +15,8 @@ public class InsertUi extends JPanel{
 
 	private MainWindow mainWindow;
 	private Controller controller;
+	private InsertUi iu = this;
+
 
 	public InsertUi(MainWindow mainWindow, Controller controller) {
 		this.mainWindow = mainWindow;
@@ -46,9 +48,27 @@ public class InsertUi extends JPanel{
 		okButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				controller.add(id.getText(), name.getText(), mail.getText());
-				mainWindow.viewInsert();
+				if (!id.getText().isEmpty() && !name.getText().isEmpty() && !mail.getText().isEmpty()) {
+					if (controller.search(id.getText()) != null) {
 
+						JLabel dup = new JLabel("Duplicate Id");
+						dup.setName("Duplicate Id");
+						iu.add(dup);
+						iu.revalidate();
+
+					} else {
+						controller.add(id.getText(), name.getText(), mail.getText());
+						mainWindow.viewInsert();
+					}
+				}
+				else
+				{
+
+					JLabel empty = new JLabel("Empty");
+					empty.setName("Empty");
+					iu.add(empty);
+					iu.revalidate();
+				}
 			}
 		});
 

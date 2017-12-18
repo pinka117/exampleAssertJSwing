@@ -40,6 +40,15 @@ public class InsertSteps {
 	public void i_click_Add_contact(String btn) {
 		if(btn.equals("Ok"))
 				{
+			for(int i=0;i<listEmployees.size();i++)
+			{
+				if(listEmployees.get(i).getId().equals(idSave))
+				{
+					when(controller.search(anyString())).thenReturn(new Employee("1","1","1"));
+					
+				}
+				
+			}
 					listEmployees.add(new Employee(idSave,nameSave,mailSave));
 				}
 		window.button(btn).click();
@@ -74,6 +83,18 @@ public class InsertSteps {
 		if (window != null) {
 			window.cleanUp();
 		}
+	}
+
+	@Then("^Error message empty$")
+	public void errorMessageEmpty()  {
+	listEmployees.removeLast();
+	window.label("Empty");
+	}
+
+	@Then("^Error message Duplicate Id$")
+	public void errorMessageDuplicateId()  {
+		listEmployees.removeLast();
+		window.label("Duplicate Id");
 	}
 
 }

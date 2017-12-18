@@ -13,9 +13,11 @@ public class InsertUi extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private MainWindow mainWindow;
-	private Controller controller;
+	private transient Controller controller;
 	private InsertUi iu = this;
-	private JTextField id, name, mail;
+	private JTextField id;
+	private JTextField name;
+	private JTextField mail;
 
 	public InsertUi(MainWindow mainWindow, Controller controller) {
 		this.mainWindow = mainWindow;

@@ -21,7 +21,7 @@ public class MainUi extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 	private MainWindow mainWindow;
-	private Controller controller;
+	private transient Controller controller;
 	private JPanel table;
 
 	public MainUi(MainWindow mainWindow, Controller controller) {

@@ -9,7 +9,7 @@ import com.attsw.example.assertjswing.controller.Controller;
 public class MainWindow extends JFrame{
 
 	private static final long serialVersionUID = 1L;
-	private Controller controller;
+	private transient Controller controller;
 	private MainWindow frame = this;
 
 	public MainWindow(Controller controller) {

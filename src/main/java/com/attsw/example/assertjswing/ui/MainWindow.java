@@ -8,8 +8,8 @@ import com.attsw.example.assertjswing.controller.Controller;
 
 public class MainWindow extends JFrame{
 
+	private static final long serialVersionUID = 1L;
 	private Controller controller;
-	
 	private MainWindow frame = this;
 
 	public MainWindow(Controller controller) {
@@ -19,8 +19,6 @@ public class MainWindow extends JFrame{
 		this.setPreferredSize(new Dimension(500, 500));
 		this.getContentPane().add(new MainUi(this, controller));
 	}
-
-
 
 	public void viewInsert() {
 		frame.getContentPane().removeAll();

@@ -43,6 +43,8 @@ public class MainUi extends JPanel{
 		columnNames.add("Id");
 		columnNames.add("Name");
 		columnNames.add("Mail");
+		columnNames.add("Modify");
+		columnNames.add("Remove");
 		Iterator<String> itCN = columnNames.iterator();
 		while (itCN.hasNext()) {
 
@@ -68,6 +70,15 @@ public class MainUi extends JPanel{
 		JLabel mail = new JLabel(e.getMail());
 		mail.setName(e.getMail());
 		table.add(mail);
+		JButton modify = new JButton("Modify");
+		modify.setName("modify" + e.getId());
+		modify.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				mainWindow.viewModify(e.getId());
+			}
+		});
+		table.add(modify);
 		JButton remove = new JButton("Remove");
 		remove.setName("remove" + e.getId());
 		remove.addMouseListener(new MouseAdapter() {
@@ -77,12 +88,13 @@ public class MainUi extends JPanel{
 				mainWindow.viewMain();
 			}
 		});
+		
 		table.add(remove);
 		rows++;
 	}
 		
 		
-	table.setLayout(new GridLayout(rows, 4));
+	table.setLayout(new GridLayout(rows, 5));
 	add(table, BorderLayout.CENTER);
 	}
 

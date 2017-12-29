@@ -30,4 +30,12 @@ public class MainWindow extends JFrame{
 		frame.getContentPane().add(new MainUi(this, controller));
 		frame.revalidate();
 	}
+	public void viewModify(String id) {
+		frame.getContentPane().removeAll();
+		ModifyUi mod = new ModifyUi(this, controller,id);
+		frame.getContentPane().add(mod);
+		frame.revalidate();
+		
+	}
+
 }

@@ -37,7 +37,7 @@ public class InsertSteps {
 	}
 
 	@When("^I click (.*)$")
-	public void i_click_Add_contact(String btn) {
+	public void clickBtn(String btn) {
 		if (btn.equals("Ok")) {
 			for (int i = 0; i < listEmployees.size(); i++) {
 				if (listEmployees.get(i).getId().equals(idSave)) {

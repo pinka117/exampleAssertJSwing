@@ -7,7 +7,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
 import com.attsw.example.assertjswing.model.*;
 import com.attsw.example.assertjswing.controller.*;
 
@@ -42,7 +41,6 @@ public class ModifyUi extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				if (!name.getText().isEmpty() && !mail.getText().isEmpty()) {
-
 					rep.modify(id, name.getText(), mail.getText());
 					mainUi.viewMain();
 				} else {
@@ -55,7 +53,6 @@ public class ModifyUi extends JPanel {
 		});
 		okButton.setName("ok");
 		this.add(okButton);
-		
 		this.add(new ReturnButton(mainWindow));
 	}
 }

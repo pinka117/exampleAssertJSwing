@@ -1,7 +1,6 @@
 package com.attsw.example.assertjswing.controller;
 
 import java.util.List;
-
 import com.attsw.example.assertjswing.model.Employee;
 
 public interface Controller {

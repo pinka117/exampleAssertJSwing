@@ -47,7 +47,6 @@ public class InsertSteps {
 			listEmployees.add(new Employee(idSave, nameSave, mailSave));
 		}
 		window.button(btn).click();
-		
 	}
 
 	@Then("^a label (.*) is visible$")
@@ -83,13 +82,13 @@ public class InsertSteps {
 	@Then("^Error message empty$")
 	public void errorMessageEmpty() {
 		listEmployees.removeLast();
-		verify(controller,times(0)).add(anyString(),anyString(), anyString());
+		verify(controller, times(0)).add(anyString(), anyString(), anyString());
 		window.label("Empty");
 	}
 
 	@Then("^Error message Duplicate Id$")
 	public void errorMessageDuplicateId() {
-		verify(controller,times(1)).add(anyString(),anyString(), anyString());
+		verify(controller, times(1)).add(anyString(), anyString(), anyString());
 		window.label("Duplicate Id");
 	}
 }

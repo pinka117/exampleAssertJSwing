@@ -7,11 +7,9 @@ import org.assertj.swing.core.Robot;
 import org.assertj.swing.edt.FailOnThreadViolationRepaintManager;
 import org.assertj.swing.edt.GuiActionRunner;
 import org.assertj.swing.fixture.FrameFixture;
-
 import com.attsw.example.assertjswing.model.*;
 import com.attsw.example.assertjswing.ui.MainWindow;
 import com.attsw.example.assertjswing.controller.*;
-
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -33,14 +31,12 @@ public class ModifySteps {
 		listEmployees.add(new Employee("1", "name1", "mail1"));
 		when(es.allEmployees()).thenReturn(listEmployees);
 		when(es.search("1")).thenReturn(this.search("1"));
-
 		frame = GuiActionRunner.execute(() -> new MainWindow(es));
 		robot = BasicRobot.robotWithCurrentAwtHierarchy();
 		robot.settings().delayBetweenEvents(100);
 		robot.settings().timeoutToBeVisible(100);
 		window = new FrameFixture(robot, frame);
 		window.show();
-
 	}
 
 	private Employee search(String id) {
@@ -56,23 +52,18 @@ public class ModifySteps {
 	public void tearDown() {
 		if (window != null) {
 			window.cleanUp();
-
 		}
-
 	}
 
 	@When("^I modify key (.*) name to (.*)$")
 	public void iModifyName(String id, String newName) {
-
 		window.textBox("name").deleteText();
 		window.textBox("name").enterText(newName);
 		for (int i = 0; i < listEmployees.size(); i++) {
 			if (listEmployees.get(i).getId().equals(id)) {
-
 				listEmployees.get(i).setName(newName);
 			}
 		}
-
 	}
 
 	@And("^(.*),(.*),(.*) is present$")
@@ -94,7 +85,6 @@ public class ModifySteps {
 		window.textBox("mail").enterText(newMail);
 		for (int i = 0; i < listEmployees.size(); i++) {
 			if (listEmployees.get(i).getId().equals(id)) {
-
 				listEmployees.get(i).setMail(newMail);
 			}
 		}

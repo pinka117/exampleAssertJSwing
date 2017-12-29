@@ -68,12 +68,21 @@ public class MainUi extends JPanel{
 		JLabel mail = new JLabel(e.getMail());
 		mail.setName(e.getMail());
 		table.add(mail);
-		
+		JButton remove = new JButton("Remove");
+		remove.setName("remove" + e.getId());
+		remove.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				controller.remove(e.getId());
+				mainWindow.viewMain();
+			}
+		});
+		table.add(remove);
 		rows++;
 	}
 		
 		
-	table.setLayout(new GridLayout(rows, 3));
+	table.setLayout(new GridLayout(rows, 4));
 	add(table, BorderLayout.CENTER);
 	}
 

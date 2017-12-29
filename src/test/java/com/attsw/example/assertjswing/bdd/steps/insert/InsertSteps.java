@@ -1,4 +1,4 @@
-package com.attsw.example.assertjswing.bdd.steps;
+package com.attsw.example.assertjswing.bdd.steps.insert;
 
 import java.util.LinkedList;
 import static org.mockito.Mockito.*;

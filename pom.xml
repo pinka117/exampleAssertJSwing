@@ -19,6 +19,9 @@
 		<sonar.language>java</sonar.language>
 		<sonar.junit.reportPaths>${project.build.directory}/surefire-reports,${project.build.directory}/failsafe-reports</sonar.junit.reportPaths>
 		<sonar.jacoco.reportPaths>${jacoco.data.file},${project.build.directory}/coverage-reports/jacoco-it.exec</sonar.jacoco.reportPaths>
+		<sonar.issue.ignore.multicriteria>e11</sonar.issue.ignore.multicriteria>
+		<sonar.issue.ignore.multicriteria.e11.ruleKey>squid:MaximumInheritanceDepth</sonar.issue.ignore.multicriteria.e11.ruleKey>
+		<sonar.issue.ignore.multicriteria.e11.resourceKey>**/*.java</sonar.issue.ignore.multicriteria.e11.resourceKey>
 	</properties>
 
 	<dependencies>

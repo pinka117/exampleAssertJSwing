@@ -80,7 +80,7 @@
 				<configuration>
 					<jacocoReports>
 						<jacocoReport>${project.reporting.outputDirectory}/jacoco/jacoco.xml</jacocoReport>
-						<jacocoReport>${project.reporting.outputDirectory}/jacocoit/jacoco.xml</jacocoReport>
+						<jacocoReport>${project.reporting.outputDirectory}/jacoco-it/jacoco.xml</jacocoReport>
 					</jacocoReports>
 				</configuration>
 			</plugin>

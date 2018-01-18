@@ -16,6 +16,9 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<jacoco.data.file>${project.build.directory}/coveragereports/jacoco.exec</jacoco.data.file>
 		<jacoco.report.path>${project.reporting.outputDirectory}/jacocout</jacoco.report.path>
+		<sonar.language>java</sonar.language>
+		<sonar.junit.reportPaths>${project.build.directory}/surefire-reports,${project.build.directory}/failsafe-reports</sonar.junit.reportPaths>
+		<sonar.jacoco.reportPaths>${jacoco.data.file}</sonar.jacoco.reportPaths>
 	</properties>
 
 	<dependencies>

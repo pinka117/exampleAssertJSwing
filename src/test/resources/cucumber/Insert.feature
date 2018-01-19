@@ -41,9 +41,25 @@ Feature: insert
     And a label Lucia is visible
     And a label lucia.it is visible
      @insert
-  Scenario: insertEmptyLine
+  Scenario: insertEmptyId
     Given the main frame is visible
     And I click Add contact
+    And I insert name Mario
+    And I insert mail mario.it
+    When I click Ok
+    Then Error message empty
+    Scenario: insertEmptyName
+    Given the main frame is visible
+    And I click Add contact
+    And I insert mail mario.it
+    And I insert id 1
+    When I click Ok
+    Then Error message empty
+    Scenario: insertEmptyMail
+    Given the main frame is visible
+    And I click Add contact
+    And I insert name Mario
+    And I insert id 1
     When I click Ok
     Then Error message empty
     @insert

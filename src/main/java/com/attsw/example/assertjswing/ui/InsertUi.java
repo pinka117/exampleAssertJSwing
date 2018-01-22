@@ -7,10 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
-
 import com.attsw.example.assertjswing.controller.IController;
-import javax.swing.SwingConstants;
 
 public class InsertUi extends JPanel {
 

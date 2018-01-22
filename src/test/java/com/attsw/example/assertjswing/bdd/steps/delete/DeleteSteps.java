@@ -40,19 +40,19 @@ public class DeleteSteps {
 		window.show();
 	}
 
-	@And("^id 1 is present$")
+	@And("^An employee with id 1 is present$")
 	public void isPresent() {
 		window.label("1");
 	}
 
-	@When("^i remove id (.*)$")
+	@When("^I remove an employee with id (.*)$")
 	public void remove(String id) {
 		listEmployees.removeLast();
 		window.button("remove" + id).click();
 		verify(es, times(1)).remove(id);
 	}
 
-	@Then("id 1 not present")
+	@Then("An employee with id 1 is not present")
 	public void notPresent() {
 		try {
 			window.label("1");

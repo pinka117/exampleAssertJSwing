@@ -56,7 +56,7 @@ public class ModifySteps {
 	}
 
 	@When("^I modify key (.*) name to (.*)$")
-	public void iModifyName(String id, String newName) {
+	public void ModifyName(String id, String newName) {
 		window.textBox("name").deleteText();
 		window.textBox("name").enterText(newName);
 		for (int i = 0; i < listEmployees.size(); i++) {
@@ -67,7 +67,7 @@ public class ModifySteps {
 	}
 
 	@And("^An employee with (.*),(.*),(.*) is present$")
-	public void fieldPresent(String id, String name, String mail) {
+	public void rowPresent(String id, String name, String mail) {
 		window.label(id);
 		window.label(name);
 		window.label(mail);
@@ -79,7 +79,7 @@ public class ModifySteps {
 	}
 
 	@When("^I modify key (.*) mail to (.*)$")
-	public void iModifyKeyMailToLuciaIt(String id, String newMail) {
+	public void ModifyMail(String id, String newMail) {
 
 		window.textBox("mail").deleteText();
 		window.textBox("mail").enterText(newMail);

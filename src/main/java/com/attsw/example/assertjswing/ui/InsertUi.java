@@ -7,19 +7,19 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import com.attsw.example.assertjswing.controller.Controller;
+import com.attsw.example.assertjswing.controller.IController;
 
 public class InsertUi extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private MainWindow mainWindow;
-	private transient Controller controller;
+	private transient IController controller;
 	private InsertUi iu = this;
 	private JTextField id;
 	private JTextField name;
 	private JTextField mail;
 
-	public InsertUi(MainWindow mainWindow, Controller controller) {
+	public InsertUi(MainWindow mainWindow, IController controller) {
 		this.mainWindow = mainWindow;
 		this.controller = controller;
 		setLayout(new GridLayout(3, 2));

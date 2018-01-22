@@ -9,7 +9,7 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import com.attsw.example.assertjswing.controller.Controller;
+import com.attsw.example.assertjswing.controller.IController;
 import com.attsw.example.assertjswing.model.Employee;
 import java.awt.event.MouseAdapter;
 
@@ -18,7 +18,7 @@ public class MainUi extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JPanel table;
 
-	public MainUi(MainWindow mainWindow, Controller controller) {
+	public MainUi(MainWindow mainWindow, IController controller) {
 		int rows = 1;
 		setLayout(new BorderLayout());
 		JButton btnAddContact = new JButton("Add contact");

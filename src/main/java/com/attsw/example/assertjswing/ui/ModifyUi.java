@@ -15,27 +15,32 @@ public class ModifyUi extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private MainWindow mainUi;
 	private ModifyUi mu = this;
+	private JPanel pnl;
+	private JPanel pnlerror;
 
 	public ModifyUi(MainWindow mainWindow, IController rep, String id) {
 		this.mainUi = mainWindow;
-		setLayout(new GridLayout(3, 2));
+		setLayout(new GridLayout(3, 1));
+		pnl = new JPanel();
+		pnlerror = new JPanel();
+		pnl.setLayout(new GridLayout(3, 2, 10, 30));
 		Employee e = rep.search(id);
 		JLabel nameLbl = new JLabel("Name");
 		nameLbl.setName("name");
-		this.add(nameLbl);
+		pnl.add(nameLbl);
 		JLabel mailLbl = new JLabel("Mail");
 		mailLbl.setName("mail");
-		this.add(mailLbl);
+		pnl.add(mailLbl);
 		JTextField name = new JTextField();
 		name.setName("name");
 		name.setText(e.getName());
 		name.setSize(20, 10);
-		this.add(name);
+		pnl.add(name);
 		JTextField mail = new JTextField();
 		mail.setName("mail");
 		mail.setText(e.getMail());
 		mail.setSize(20, 10);
-		this.add(mail);
+		pnl.add(mail);
 		JButton okButton = new JButton("Ok");
 		okButton.addMouseListener(new MouseAdapter() {
 			@Override
@@ -44,15 +49,19 @@ public class ModifyUi extends JPanel {
 					rep.modify(id, name.getText(), mail.getText());
 					mainUi.viewMain();
 				} else {
-					JLabel empty = new JLabel("empty");
+					JLabel empty = new JLabel("Empty");
 					empty.setName("empty");
-					mu.add(empty);
+					pnlerror.removeAll();
+					pnlerror.add(empty);
 					mu.revalidate();
 				}
 			}
 		});
 		okButton.setName("ok");
-		this.add(okButton);
-		this.add(new ReturnButton(mainWindow));
+		pnl.add(okButton);
+		pnl.add(new ReturnButton(mainWindow));
+		this.add(pnl);
+		this.add(pnlerror);
+		this.add(new JPanel());
 	}
 }

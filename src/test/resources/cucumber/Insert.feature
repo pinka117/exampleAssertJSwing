@@ -100,4 +100,5 @@ Feature: insert
     Given The main frame is visible
     And I click Add contact
     When I insert lots of contacts
+    And I click Return
     Then Contacts are visible

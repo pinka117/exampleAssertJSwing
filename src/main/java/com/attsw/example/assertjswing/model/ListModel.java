@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ListModel implements IModel {
 
-	private LinkedList<Employee> list = new LinkedList<Employee>();
+	private LinkedList<Employee> list = new LinkedList<>();
 
 	@Override
 	public List<Employee> allEmployees() {

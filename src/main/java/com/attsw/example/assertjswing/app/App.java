@@ -10,6 +10,6 @@ public class App {
 		ListModel lm = new ListModel();
 		Controller co = new Controller(lm);
 		MainWindow mw = new MainWindow(co);
-		mw.show();
+		mw.setVisible(true);
 	}
 }

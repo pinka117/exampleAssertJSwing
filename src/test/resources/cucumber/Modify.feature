@@ -28,7 +28,7 @@ Feature: modify
     When I click modify1
     And I insert empty mail  
     And I click ok
-    And there is a label empty
+    And There is a label empty
     When I click Return
     Then An employee with 1,name1,mail1 is present
     Scenario: modifyEmptyName

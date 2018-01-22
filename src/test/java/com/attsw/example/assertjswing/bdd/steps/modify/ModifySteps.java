@@ -66,14 +66,14 @@ public class ModifySteps {
 		}
 	}
 
-	@And("^(.*),(.*),(.*) is present$")
+	@And("^An employee with (.*),(.*),(.*) is present$")
 	public void fieldPresent(String id, String name, String mail) {
 		window.label(id);
 		window.label(name);
 		window.label(mail);
 	}
 
-	@And("^i click (.*)$")
+	@And("^I click (.*)$")
 	public void iClickBtn(String btn) {
 		window.button(btn).click();
 	}
@@ -90,9 +90,8 @@ public class ModifySteps {
 		}
 	}
 
-	@Then("^there is a label empty$")
+	@Then("^There is a label empty$")
 	public void thereIsALabelEmpty() {
-		verify(es, times(0)).modify(anyString(), anyString(), anyString());
 		window.label("empty");
 	}
 

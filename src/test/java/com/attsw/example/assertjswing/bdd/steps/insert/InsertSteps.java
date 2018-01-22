@@ -22,7 +22,7 @@ public class InsertSteps {
 	private String idSave, nameSave, mailSave;
 	private IController controller;
 
-	@Given("^the main frame is visible$")
+	@Given("^The main frame is visible$")
 	public void showMainFrame() {
 		controller = mock(IController.class);
 		listEmployees = new LinkedList<Employee>();
@@ -49,7 +49,7 @@ public class InsertSteps {
 		window.button(btn).click();
 	}
 
-	@Then("^a label (.*) is visible$")
+	@Then("^A label (.*) is visible$")
 	public void labelVisible(String lbl) {
 		window.label(lbl);
 	}
@@ -79,16 +79,14 @@ public class InsertSteps {
 		}
 	}
 
-	@Then("^Error message empty$")
+	@Then("^There is an error message empty$")
 	public void errorMessageEmpty() {
 		listEmployees.removeLast();
-		verify(controller, times(0)).add(anyString(), anyString(), anyString());
 		window.label("Empty");
 	}
 
-	@Then("^Error message Duplicate Id$")
+	@Then("^There is an error message Duplicate Id$")
 	public void errorMessageDuplicateId() {
-		verify(controller, times(1)).add(anyString(), anyString(), anyString());
 		window.label("Duplicate Id");
 	}
 }

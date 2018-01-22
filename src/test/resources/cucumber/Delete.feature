@@ -4,6 +4,6 @@ Feature: delete
   @delete
   Scenario: deleteOk
     Given I want to delete
-    And id 1 is present
-    When i remove id 1
-    Then id 1 not present
+    And An employee with id 1 is present
+    When I remove an employee with id 1
+    Then An employee with id 1 is not present

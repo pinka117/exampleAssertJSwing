@@ -3,27 +3,27 @@ Feature: insert
 
   @insert
   Scenario: labels
-    Given the main frame is visible
+    Given The main frame is visible
     When I click Add contact
-    Then a label Name is visible
-    And a label Id is visible
-    And a label Mail is visible
+    Then A label Name is visible
+    And A label Id is visible
+    And A label Mail is visible
 
   @insert
   Scenario: insertOkOneContact
-    Given the main frame is visible
+    Given The main frame is visible
     And I click Add contact
     When I insert name Mario
     And I insert id 1
     And I insert mail mario.it
     And I click Ok
     And I click Return
-    Then a label 1 is visible
-    And a label Mario is visible
-    And a label mario.it is visible
+    Then A label 1 is visible
+    And A label Mario is visible
+    And A label mario.it is visible
 @insert
   Scenario: insertOkMoreContacts
-    Given the main frame is visible
+    Given The main frame is visible
     And I click Add contact
     When I insert name Mario
     And I insert id 1
@@ -34,51 +34,51 @@ Feature: insert
     And I insert mail lucia.it
     And I click Ok
     And I click Return
-    Then a label 1 is visible
-    And a label Mario is visible
-    And a label mario.it is visible
-    And a label 2 is visible
-    And a label Lucia is visible
-    And a label lucia.it is visible
+    Then A label 1 is visible
+    And A label Mario is visible
+    And A label mario.it is visible
+    And A label 2 is visible
+    And A label Lucia is visible
+    And A label lucia.it is visible
      @insert
   Scenario: insertEmptyId
-    Given the main frame is visible
+    Given The main frame is visible
     And I click Add contact
     And I insert name Mario
     And I insert mail mario.it
     When I click Ok
-    Then Error message empty
+    Then There is an error message empty
     Scenario: insertEmptyName
-    Given the main frame is visible
+    Given The main frame is visible
     And I click Add contact
     And I insert mail mario.it
     And I insert id 1
     When I click Ok
-    Then Error message empty
+    Then There is an error message empty
     Scenario: insertEmptyMail
-    Given the main frame is visible
+    Given The main frame is visible
     And I click Add contact
     And I insert name Mario
     And I insert id 1
     When I click Ok
-    Then Error message empty
+    Then There is an error message empty
     @insert
   Scenario: insertEmptyLineThenOKLine
-    Given the main frame is visible
+    Given The main frame is visible
     And I click Add contact
     And I click Ok
-    And Error message empty
+    And There is an error message empty
     When I insert name Mario
     And I insert id 1
     And I insert mail mario.it
     And I click Ok
     And I click Return
-    Then a label 1 is visible
-    And a label Mario is visible
-    And a label mario.it is visible
+    Then A label 1 is visible
+    And A label Mario is visible
+    And A label mario.it is visible
       @insert
   Scenario: duplicateId
-  Given the main frame is visible
+  Given The main frame is visible
     And I click Add contact
     When I insert name Mario
     And I insert id 1
@@ -88,4 +88,4 @@ Feature: insert
     And I insert id 1
     And I insert mail mario.it
     And I click Ok
-    Then Error message Duplicate Id
+    Then There is an error message Duplicate Id

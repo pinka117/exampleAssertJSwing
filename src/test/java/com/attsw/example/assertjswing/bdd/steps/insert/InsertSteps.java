@@ -89,4 +89,22 @@ public class InsertSteps {
 	public void errorMessageDuplicateId() {
 		window.label("Duplicate Id");
 	}
+
+	@When("^I insert lots of contacts$")
+	public void iInsertLotsOfContacts() throws Throwable {
+		for (Integer i = 0; i < 15; i++) {
+			window.textBox("Id").enterText(i.toString());
+			window.textBox("Mail").enterText("mail");
+			window.textBox("Name").enterText("name");
+			listEmployees.add(new Employee(i.toString(), "name", "mail"));
+			window.button("Ok").click();
+		}
+	}
+
+	@Then("^Contacts are visible$")
+	public void contactsAreVisible() throws Throwable {
+		for (int i = 0; i < listEmployees.size(); i++) {
+			window.label(listEmployees.get(i).getId());
+		}
+	}
 }

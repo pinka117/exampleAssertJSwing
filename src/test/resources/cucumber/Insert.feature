@@ -21,7 +21,8 @@ Feature: insert
     Then A label 1 is visible
     And A label Mario is visible
     And A label mario.it is visible
-@insert
+
+  @insert
   Scenario: insertOkMoreContacts
     Given The main frame is visible
     And I click Add contact
@@ -40,7 +41,8 @@ Feature: insert
     And A label 2 is visible
     And A label Lucia is visible
     And A label lucia.it is visible
-     @insert
+
+  @insert
   Scenario: insertEmptyId
     Given The main frame is visible
     And I click Add contact
@@ -48,21 +50,24 @@ Feature: insert
     And I insert mail mario.it
     When I click Ok
     Then There is an error message empty
-    Scenario: insertEmptyName
+
+  Scenario: insertEmptyName
     Given The main frame is visible
     And I click Add contact
     And I insert mail mario.it
     And I insert id 1
     When I click Ok
     Then There is an error message empty
-    Scenario: insertEmptyMail
+
+  Scenario: insertEmptyMail
     Given The main frame is visible
     And I click Add contact
     And I insert name Mario
     And I insert id 1
     When I click Ok
     Then There is an error message empty
-    @insert
+
+  @insert
   Scenario: insertEmptyLineThenOKLine
     Given The main frame is visible
     And I click Add contact
@@ -76,9 +81,10 @@ Feature: insert
     Then A label 1 is visible
     And A label Mario is visible
     And A label mario.it is visible
-      @insert
+
+  @insert
   Scenario: duplicateId
-  Given The main frame is visible
+    Given The main frame is visible
     And I click Add contact
     When I insert name Mario
     And I insert id 1
@@ -89,3 +95,9 @@ Feature: insert
     And I insert mail mario.it
     And I click Ok
     Then There is an error message Duplicate Id
+
+  Scenario: addALotOfContacts
+    Given The main frame is visible
+    And I click Add contact
+    When I insert lots of contacts
+    Then Contacts are visible

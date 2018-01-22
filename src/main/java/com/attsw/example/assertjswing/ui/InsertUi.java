@@ -7,7 +7,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
+
 import com.attsw.example.assertjswing.controller.IController;
+import javax.swing.SwingConstants;
 
 public class InsertUi extends JPanel {
 
@@ -18,15 +21,26 @@ public class InsertUi extends JPanel {
 	private JTextField id;
 	private JTextField name;
 	private JTextField mail;
+	private JPanel pnl;
 
 	public InsertUi(MainWindow mainWindow, IController controller) {
 		this.mainWindow = mainWindow;
 		this.controller = controller;
-		setLayout(new GridLayout(3, 2));
+		setLayout(new GridLayout(3, 1));
+		pnl = new JPanel();
+		addComp();
+		this.add(pnl);
+		this.add(new JPanel());
+		this.add(new JPanel());
+
+	}
+
+	private void addComp() {
+		pnl.setLayout(new GridLayout(3, 2, 10, 30));
 		addLabels();
 		addFields();
 		addOkButton();
-		this.add(new ReturnButton(mainWindow));
+		pnl.add(new ReturnButton(mainWindow));
 	}
 
 	private void addOkButton() {
@@ -38,7 +52,9 @@ public class InsertUi extends JPanel {
 					if (controller.search(id.getText()) != null) {
 						JLabel dup = new JLabel("Duplicate Id");
 						dup.setName("Duplicate Id");
-						iu.add(dup);
+						pnl.removeAll();
+						addComp();
+						pnl.add(dup);
 						iu.revalidate();
 					} else {
 						controller.add(id.getText(), name.getText(), mail.getText());
@@ -47,40 +63,42 @@ public class InsertUi extends JPanel {
 				} else {
 					JLabel empty = new JLabel("Empty");
 					empty.setName("Empty");
-					iu.add(empty);
+					pnl.removeAll();
+					addComp();
+					pnl.add(empty);
 					iu.revalidate();
 				}
 			}
 		});
 		okButton.setName("Ok");
-		this.add(okButton);
+		pnl.add(okButton);
 	}
 
 	private void addFields() {
 		id = new JTextField();
 		id.setName("Id");
 		id.setSize(20, 10);
-		this.add(id);
+		pnl.add(id);
 		name = new JTextField();
 		name.setName("Name");
 		name.setSize(20, 10);
-		this.add(name);
+		pnl.add(name);
 		mail = new JTextField();
 		mail.setName("Mail");
 		mail.setSize(20, 10);
-		this.add(mail);
+		pnl.add(mail);
 	}
 
 	private void addLabels() {
 		JLabel idLbl = new JLabel("Id");
 		idLbl.setName("Id");
-		this.add(idLbl);
+		pnl.add(idLbl);
 		JLabel nameLbl = new JLabel("Name");
 		nameLbl.setName("Name");
-		this.add(nameLbl);
+		pnl.add(nameLbl);
 		JLabel mailLbl = new JLabel("Mail");
 		mailLbl.setName("Mail");
-		this.add(mailLbl);
+		pnl.add(mailLbl);
 	}
 
 }

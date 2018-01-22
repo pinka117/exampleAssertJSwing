@@ -1,6 +1,7 @@
 package com.attsw.example.assertjswing.ui;
 
 import java.awt.BorderLayout;
+import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
@@ -31,6 +32,7 @@ public class MainUi extends JPanel {
 		});
 		this.add(btnAddContact, BorderLayout.NORTH);
 		table = new JPanel();
+		GridBagConstraints c = new GridBagConstraints();
 		LinkedList<String> columnNames = new LinkedList<>();
 		columnNames.add("Id");
 		columnNames.add("Name");
@@ -38,10 +40,14 @@ public class MainUi extends JPanel {
 		columnNames.add("Modify");
 		columnNames.add("Remove");
 		Iterator<String> itCN = columnNames.iterator();
+		int i=1;
 		while (itCN.hasNext()) {
 			String t = itCN.next();
 			JLabel title = new JLabel(t);
 			title.setName(t);
+			c.gridx = i++;
+	        c.gridy = 0;
+	        c.gridwidth=1;
 			table.add(title);
 		}
 		List<Employee> list = controller.allEmployees();
@@ -78,7 +84,24 @@ public class MainUi extends JPanel {
 			table.add(remove);
 			rows++;
 		}
-		table.setLayout(new GridLayout(rows, 5));
+		for(i=0;i<(5*(12-rows));i++)
+		{
+			table.add(new JPanel());
+		}
+
+		
+		if(rows>12)
+		{
+			table.setLayout(new GridLayout(rows,5));	
+		}
+		else
+		{
+			table.setLayout(new GridLayout(12,5));
+		}
 		add(table, BorderLayout.CENTER);
+		
+		
+		
+		
 	}
 }

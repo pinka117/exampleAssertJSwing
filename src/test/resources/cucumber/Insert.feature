@@ -21,27 +21,7 @@ Feature: insert
     Then A label 1 is visible
     And A label Mario is visible
     And A label mario.it is visible
-
-  @insert
-  Scenario: insertOkMoreContacts
-    Given The main frame is visible
-    And I click Add contact
-    When I insert name Mario
-    And I insert id 1
-    And I insert mail mario.it
-    And I click Ok
-    And I insert name Lucia
-    And I insert id 2
-    And I insert mail lucia.it
-    And I click Ok
-    And I click Return
-    Then A label 1 is visible
-    And A label Mario is visible
-    And A label mario.it is visible
-    And A label 2 is visible
-    And A label Lucia is visible
-    And A label lucia.it is visible
-
+    
   @insert
   Scenario: insertEmptyId
     Given The main frame is visible

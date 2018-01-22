@@ -16,7 +16,7 @@ public class ModifyUi extends JPanel {
 	private MainWindow mainUi;
 	private ModifyUi mu = this;
 
-	public ModifyUi(MainWindow mainWindow, Controller rep, String id) {
+	public ModifyUi(MainWindow mainWindow, IController rep, String id) {
 		this.mainUi = mainWindow;
 		setLayout(new GridLayout(3, 2));
 		Employee e = rep.search(id);

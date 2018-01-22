@@ -2,15 +2,15 @@ package com.attsw.example.assertjswing.ui;
 
 import java.awt.Dimension;
 import javax.swing.JFrame;
-import com.attsw.example.assertjswing.controller.Controller;
+import com.attsw.example.assertjswing.controller.IController;
 
 public class MainWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private transient Controller controller;
+	private transient IController controller;
 	private MainWindow frame = this;
 
-	public MainWindow(Controller controller) {
+	public MainWindow(IController controller) {
 		this.controller = controller;
 		this.setSize(500, 500);
 		this.setResizable(false);

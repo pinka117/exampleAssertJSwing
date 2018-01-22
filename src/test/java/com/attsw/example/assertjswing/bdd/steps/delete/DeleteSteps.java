@@ -22,12 +22,12 @@ public class DeleteSteps {
 	private FrameFixture window;
 	private Robot robot;
 	private LinkedList<Employee> listEmployees;
-	private Controller es;
+	private IController es;
 
 	@Given("^I want to delete$")
 	public void showMainFrame() {
 		FailOnThreadViolationRepaintManager.install();
-		es = mock(Controller.class);
+		es = mock(IController.class);
 		listEmployees = new LinkedList<Employee>();
 		listEmployees.add(new Employee("1", "name1", "mail1"));
 		when(es.allEmployees()).thenReturn(listEmployees);

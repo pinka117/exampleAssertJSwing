@@ -11,7 +11,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import com.attsw.example.assertjswing.controller.Controller;
+import com.attsw.example.assertjswing.controller.IController;
 import com.attsw.example.assertjswing.model.Employee;
 import com.attsw.example.assertjswing.ui.MainWindow;
 
@@ -20,11 +20,11 @@ public class InsertSteps {
 	private Robot robot;
 	private LinkedList<Employee> listEmployees;
 	private String idSave, nameSave, mailSave;
-	private Controller controller;
+	private IController controller;
 
 	@Given("^the main frame is visible$")
 	public void showMainFrame() {
-		controller = mock(Controller.class);
+		controller = mock(IController.class);
 		listEmployees = new LinkedList<Employee>();
 		when(controller.allEmployees()).thenReturn(listEmployees);
 		when(controller.search(anyString())).thenReturn(null);

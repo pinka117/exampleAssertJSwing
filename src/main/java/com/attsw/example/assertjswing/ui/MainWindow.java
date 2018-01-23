@@ -35,7 +35,5 @@ public class MainWindow extends JFrame {
 		ModifyUi mod = new ModifyUi(this, controller, id);
 		frame.getContentPane().add(mod);
 		frame.revalidate();
-
 	}
-
 }

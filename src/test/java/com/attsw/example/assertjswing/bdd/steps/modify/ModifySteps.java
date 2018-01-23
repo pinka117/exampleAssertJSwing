@@ -104,5 +104,4 @@ public class ModifySteps {
 	public void iInsertEmptyName() {
 		window.textBox("name").deleteText();
 	}
-
 }

@@ -29,7 +29,6 @@ public class InsertUi extends JPanel {
 		this.add(pnl);
 		this.add(new JPanel());
 		this.add(new JPanel());
-
 	}
 
 	private void addComp() {
@@ -97,5 +96,4 @@ public class InsertUi extends JPanel {
 		mailLbl.setName("Mail");
 		pnl.add(mailLbl);
 	}
-
 }

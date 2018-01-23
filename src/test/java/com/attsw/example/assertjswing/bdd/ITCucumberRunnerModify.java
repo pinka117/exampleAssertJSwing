@@ -15,5 +15,4 @@ public class ITCucumberRunnerModify {
 	@Test
 	public void test() {
 	}
-
 }

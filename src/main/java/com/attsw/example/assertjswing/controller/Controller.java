@@ -21,7 +21,6 @@ public class Controller implements IController {
 	@Override
 	public Employee search(String id) {
 		return model.search(id);
-
 	}
 
 	@Override
@@ -37,7 +36,5 @@ public class Controller implements IController {
 	@Override
 	public void modify(String id, String name, String mail) {
 		model.modify(id, name, mail);
-
 	}
-
 }

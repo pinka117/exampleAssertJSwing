@@ -50,16 +50,17 @@ public class ListModelTest {
 		lm.add(e);
 		assertFalse(lm.remove("2"));
 	}
+
 	@Test
 	public void testModifyOk() {
 		lm.add(e);
 		assertTrue(lm.modify("1", "2", "2"));
-		assertEquals("2",lm.search("1").getName());
-		assertEquals("2",lm.search("1").getMail());
+		assertEquals("2", lm.search("1").getName());
+		assertEquals("2", lm.search("1").getMail());
 	}
+
 	@Test
 	public void testModifyNotPresent() {
 		assertFalse(lm.modify("1", "2", "2"));
 	}
-
 }

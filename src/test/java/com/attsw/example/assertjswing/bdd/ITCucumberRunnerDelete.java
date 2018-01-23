@@ -13,5 +13,4 @@ public class ITCucumberRunnerDelete {
 	@Test
 	public void test() {
 	}
-
 }
